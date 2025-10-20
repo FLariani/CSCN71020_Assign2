@@ -45,6 +45,13 @@ namespace BCSRecUnitTests
 			setLength(1, &length);   // 1 is allowed
 			Assert::AreEqual(1, length); // Check that it passed 
 		}
+		// Test 3: Invalid input (too high should keep original value)
+		TEST_METHOD(SetLength_TooHigh)
+		{
+			int length = 99;          // Start with 99
+			setLength(150, &length);  // 150 is invalid, should not update
+			Assert::AreEqual(99, length);  // Check that it didn’t change
+		}
 
 
 
