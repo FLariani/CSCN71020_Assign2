@@ -2,6 +2,7 @@
 #include "CppUnitTest.h"
 extern "C" int getPerimeter(int* length, int* width);
 extern "C" int getArea(int* length, int* width);
+extern "C" void setLength(int input, int* length);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -30,6 +31,14 @@ namespace BCSRecUnitTests
 
 			Assert::AreEqual(10, result); // Check if result is correct
 		}
+		// Test 1 for setLength: Normal input
+		TEST_METHOD(SetLength_NormalValue)
+		{
+			int length = 0;
+			setLength(50, &length);   // Call the function with 50
+			Assert::AreEqual(50, length);  // Check if it was stored correctly
+		}
+
 
 
 
