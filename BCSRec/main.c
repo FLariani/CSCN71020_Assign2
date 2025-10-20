@@ -85,7 +85,7 @@ void setWidth(int input, int *width) {
 }
 
 int getPerimeter(int *length, int *width) {
-	int perimeter = *length + *length + *width;
+	int perimeter = 2 * (*length + *width);  // Fixed perimeter output by using correct formula
 	return perimeter;
 }
 
