@@ -3,6 +3,7 @@
 extern "C" int getPerimeter(int* length, int* width);
 extern "C" int getArea(int* length, int* width);
 extern "C" void setLength(int input, int* length);
+extern "C" void setWidth(int input, int* width);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -52,6 +53,14 @@ namespace BCSRecUnitTests
 			setLength(150, &length);  // 150 is invalid, should not update
 			Assert::AreEqual(99, length);  // Check that it didn’t change
 		}
+		// Test 1 for setWidth: Normal input 
+		TEST_METHOD(SetWidth_NormalValue)
+		{
+			int width = 0;
+			setWidth(75, &width);
+			Assert::AreEqual(75, width);
+		}
+
 
 
 
