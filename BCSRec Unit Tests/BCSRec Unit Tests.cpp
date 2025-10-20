@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 extern "C" int getPerimeter(int* length, int* width);
+extern "C" int getArea(int* length, int* width);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -19,6 +20,18 @@ namespace BCSRecUnitTests
 
 			Assert::AreEqual(14, result); // Check if result is correct
 		}
+		// Test Area Formula Calculation
+		TEST_METHOD(TestGetArea)
+		{
+			int length = 5;  // Assign length 5
+			int width = 2;   // Assign width 2
+
+			int result = getArea(&length, &width); // Call the Function
+
+			Assert::AreEqual(10, result); // Check if result is correct
+		}
+
+
 
 	};
 }
