@@ -67,6 +67,14 @@ namespace BCSRecUnitTests
 			setWidth(99, &width);   // 99 is allowed
 			Assert::AreEqual(99, width); // Check that it passed
 		}
+		// Test 3: Invalid input (too low should keep original value)
+		TEST_METHOD(SetWidth_TooLow)
+		{
+			int width = 55;          // Start with 55
+			setWidth(0, &width);     // 0 is invalid
+			Assert::AreEqual(55, width);  // Check that it didn’t change
+		}
+
 
 
 
