@@ -38,6 +38,14 @@ namespace BCSRecUnitTests
 			setLength(50, &length);   // Call the function with 50
 			Assert::AreEqual(50, length);  // Check if it was stored correctly
 		}
+		// Test 2: Edge case (lowest possible valid value)
+		TEST_METHOD(SetLength_LowerBound1)
+		{
+			int length = 0;
+			setLength(1, &length);   // 1 is allowed
+			Assert::AreEqual(1, length); // Check that it passed 
+		}
+
 
 
 
