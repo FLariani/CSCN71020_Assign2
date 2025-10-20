@@ -60,6 +60,14 @@ namespace BCSRecUnitTests
 			setWidth(75, &width);
 			Assert::AreEqual(75, width);
 		}
+		// Test 2: Edge case (highest possible valid value)
+		TEST_METHOD(SetWidth_UpperBound99)
+		{
+			int width = 0;			// start with 0
+			setWidth(99, &width);   // 99 is allowed
+			Assert::AreEqual(99, width); // Check that it passed
+		}
+
 
 
 
